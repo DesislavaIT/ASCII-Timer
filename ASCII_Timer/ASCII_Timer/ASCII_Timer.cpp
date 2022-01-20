@@ -851,6 +851,7 @@ int main()
 	ShowTimer(hours, minutes, seconds, false);
 	SetConsoleTextAttribute(handle, 7);
 	std::cout << "-------------------------------------------------------------------------------------" << std::endl;
+	bool played = PlaySound(TEXT("Bomb.wav"), NULL, SND_SYNC);
 
 	return 0;
 }
