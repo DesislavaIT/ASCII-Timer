@@ -752,6 +752,14 @@ void SetConsoleSize()
 	SetConsoleWindowInfo(hOut, TRUE, &DisplayArea);
 }
 
+void SetCursor(int x,int y)
+{
+	COORD coord;
+	coord.X = x;
+	coord.Y = y;
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
+}
+
 int main()
 {
 	SetConsoleSize();
@@ -770,7 +778,8 @@ int main()
 		std::cin >> number;
 	}
 
-	std::cout << "-------------------------------------------------------------------------------------" << std::endl;
+	system("cls");
+	SetCursor(0, 0);
 	int seconds = 0, minutes = 0, hours = 0;
 	seconds = TurnIntoSeconds(number);
 	number /= 60;
@@ -783,10 +792,12 @@ int main()
 	bool canDecreaseSeconds = true;
 	while (hours != 0 || minutes != 0 || seconds != 0)
 	{
+		//std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 		if (hours == 0 && minutes == 0 && seconds < 10)
 		{
 			for (int i = 0; i < 10; i++)
 			{
+				std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 				if (i % 2 == 0)
 				{
 					ShowTimer(hours, minutes, seconds, true);
@@ -799,14 +810,17 @@ int main()
 				SetConsoleTextAttribute(handle, 7);
 				std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 				Sleep(100);
+				SetCursor(0, 0);
 			}
 		}
 		else
 		{
+			std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 			ShowTimer(hours, minutes, seconds, false);
 			SetConsoleTextAttribute(handle, 7);
 			std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 			Sleep(1000);
+			SetCursor(0, 0);
 		}
 
 		if (canDecreaseSeconds)
@@ -848,6 +862,9 @@ int main()
 		}
 	}
 
+	SetCursor(0, 0);
+	SetConsoleTextAttribute(handle, 7);
+	std::cout << "-------------------------------------------------------------------------------------" << std::endl;
 	ShowTimer(hours, minutes, seconds, false);
 	SetConsoleTextAttribute(handle, 7);
 	std::cout << "-------------------------------------------------------------------------------------" << std::endl;
