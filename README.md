@@ -30,6 +30,12 @@ Project 9 | SU | FMI | SI
 
 ● hh/mm/ss - hours : minutes : seconds
 
+![hhmmss](https://user-images.githubusercontent.com/94644838/150683055-4da14107-3864-4c1f-b99a-9d55d22195d0.jpg)
+
 ● mm/ss - minutes : seconds
 
+![mmss](https://user-images.githubusercontent.com/94644838/150683057-24ab4f90-8329-4e1b-9dfe-aeb15f701629.jpg)
+
 ● only seconds
+
+![ss](https://user-images.githubusercontent.com/94644838/150683059-17797ab6-20a0-4f68-b37b-5b1e28899278.jpg)
