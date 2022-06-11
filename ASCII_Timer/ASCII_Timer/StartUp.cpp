@@ -41,7 +41,7 @@ int TurnIntoMinutes(const unsigned long number)
     return result;
 }
 
-void CheckInput(long long number&)
+void CheckInput(long long& number)
 {
     while (number <= 0)
     {
